@@ -5,7 +5,17 @@
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
- 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $(".hideShowLetters").click(function(){
+        $(".Blockletters").toggle();
+    });
+	$(".hideShowBletters").click(function(){
+        $(".BlockBletters").toggle();
+    });
+});
+</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
@@ -113,17 +123,34 @@ article.accordion section h1
 	-o-transition: all 1s ease;
 	transition: all 1s ease;
 }
-span.block_letters {
-dispaly: inline;
-padding: 10px 11px;
-width:100%;
-      background:url(https://raw.githubusercontent.com/IGolovach/parseedit/master/images/Fsprite.png);
+.Blockletters{
+	margin:2%;
+	display:none;
 }
-span.block_arc {
-dispaly: inline;
-padding: 10px 26px;
-width:100%;
-      background:url(https://raw.githubusercontent.com/IGolovach/parseedit/master/images/Fsprite.png);
+.BlockBletters{
+	margin:2%;
+	display:none;
+}
+.hideShowLetters, .hideShowBletters{
+	dispay:inline;
+	cursor:pointer;
+	border: solid 2px blue;
+}
+.hideShowLetters:hover, .hideShowBletters:hover{
+	background: rgb(255, 200, 200); 
+}
+span.letters {
+	dispaly: inline;
+	padding: 10px 11px;
+	width:100%;
+    background:url(https://raw.githubusercontent.com/IGolovach/parseedit/master/images/letters.png);
+}
+
+span.Bletters {
+	dispaly: inline;
+	padding: 10px 11px;
+	width:100%;
+    background:url(https://raw.githubusercontent.com/IGolovach/parseedit/master/images/Bletters.png);
 }
 span.block2 {
 dispaly: inline;
@@ -172,50 +199,46 @@ width:100%;
 		<div id="math_block">
 		<ul id="messages"></ul>
     <form action="">
-      <input id="m" autocomplete="off" /><button></button>
-	  	<!--div class="functions" style="display: inline"> 
-		<img src="images/sin.png" onclick="tag (document.getElementById ('m'), '\\sin','')" alt="Жирный CTRL+B" title="Жирный CTRL+B"      >
-		<img src="images/cos.png" onclick="tag (document.getElementById ('m'), '\\cos','')" alt="Курсив CTRL+I" title="Курсив CTRL+I"      >
-		<img src="images/tan.png" onclick="tag (document.getElementById ('m'), '\\tan','')" alt="" title="">
-		<img src="images/sec.png" onclick="tag (document.getElementById ('m'), '\\sec','')" alt="" title="">
-		<img src="images/csc.png" onclick="tag (document.getElementById ('m'), '\\csc','')" alt="" title="">
-		<img src="images/cot.png" onclick="tag (document.getElementById ('m'), '\\cot','')" alt="" title="">
-		<img src="images/sinh.png" onclick="tag (document.getElementById ('m'), '\\sinh','')" alt="" title="">
-		<img src="images/cosh.png" onclick="tag (document.getElementById ('m'), '\\cosh','')" alt="" title="">
-		<img src="images/tanh.png" onclick="tag (document.getElementById ('m'), '\\tanh','')" alt="" title="">
-		<img src="images/coth.png" onclick="tag (document.getElementById ('m'), '\\coth','')" alt="" title="">
+		<input id="m" autocomplete="off" /><button></button>
+		<input type="button" class="hideShowLetters" value="SmallLetters">
+	<div class="Blockletters">
+		<span class="letters" onclick="tag (document.getElementById ('m'), '\\delta','')" style="background-position: -0px -0px; width: 15px; height: 34px">&nbsp;</span>
+		<span class="letters" onclick="tag (document.getElementById ('m'), '\\varepsilon','')" style="background-position: -34px -2px; width: 17px; height: 35px">&nbsp;</span>
+		<span class="letters" onclick="tag (document.getElementById ('m'), '\\eta','')" style="background-position: -70px -0px; width: 17px; height: 35px">&nbsp;</span>
+		<span class="letters" onclick="tag (document.getElementById ('m'), '\\lambda','')" style="background-position: -113px -0px; width: 11px; height: 33px">&nbsp;</span>
+		<span class="letters" onclick="tag (document.getElementById ('m'), '\\mu','')" style="background-position: -152px -0px; width: 52px; height: 35px">&nbsp;</span>
+		<span class="letters" onclick="tag (document.getElementById ('m'), '\\xi','')" style="background-position: -189px -1px; width: 49px; height: 35px">&nbsp;</span>
+		<span class="letters" onclick="tag (document.getElementById ('m'), '\\rho','')" style="background-position: -225px -0px; width: 49px; height: 34px">&nbsp;</span>
+		<span class="letters" onclick="tag (document.getElementById ('m'), '\\sigma','')" style="background-position: -264px -0px; width: 48px; height: 35px">&nbsp;</span>
+		<span class="letters" onclick="tag (document.getElementById ('m'), '\\chi','')" style="background-position: -302px -0px; width: 48px; height: 35px">&nbsp;</span>
+		<span class="letters" onclick="tag (document.getElementById ('m'), '\\omega','')" style="background-position: -340px -0px; width: 48px; height: 35px">&nbsp;</span>
+		<span class="letters" onclick="tag (document.getElementById ('m'), '\\alpha','')" style="background-position: -379px -0px; width: 48px; height: 35px">&nbsp;</span>
+		<span class="letters" onclick="tag (document.getElementById ('m'), '\\beta','')" style="background-position: -417px -0px; width: 48px; height: 35px">&nbsp;</span>
+		<span class="letters" onclick="tag (document.getElementById ('m'), '\\gamma','')" style="background-position: -457px -0px; width: 48px; height: 35px">&nbsp;</span>
+		<span class="letters" onclick="tag (document.getElementById ('m'), '\\theta','')" style="background-position: -497px -0px; width: 48px; height: 35px">&nbsp;</span>
+		<span class="letters" onclick="tag (document.getElementById ('m'), '\\pi','')" style="background-position: -537px -0px; width: 48px; height: 35px">&nbsp;</span>
+		<span class="letters" onclick="tag (document.getElementById ('m'), '\\varphi','')" style="background-position: -577px -0px; width: 48px; height: 35px">&nbsp;</span>
+		<span class="letters" onclick="tag (document.getElementById ('m'), '\\psi','')" style="background-position: -619px -0px; width: 48px; height: 35px">&nbsp;</span>
 	</div>
-	<br>
-	<div class="functions" style="display: inline"> 
-		<img src="images/arcsin.png" onclick="tag (document.getElementById ('m'), '\\arcsin','')" alt="Жирный CTRL+B" title="Жирный CTRL+B"      >
-		<img src="images/arccos.png" onclick="tag (document.getElementById ('m'), '\\arccos','')" alt="Курсив CTRL+I" title="Курсив CTRL+I"      >
-		<img src="images/arctan.png" onclick="tag (document.getElementById ('m'), '\\arctan','')" alt="" title="">
-		<img src="images/arcsec.png" onclick="tag (document.getElementById ('m'), '\\arcsec','')" alt="" title="">
-		<img src="images/arccsc.png" onclick="tag (document.getElementById ('m'), '\\arccsc','')" alt="" title="">
-		<img src="images/arccot.png" onclick="tag (document.getElementById ('m'), '\\arccot','')" alt="" title="">
-		<br>
-		<img src="images/sin_1.png" onclick="tag (document.getElementById ('m'), '\\sin^{-1}','')" alt="" title="">
-		<img src="images/cos_1.png" onclick="tag (document.getElementById ('m'), '\\cos^{-1}','')" alt="" title="">
-		<img src="images/tan_1.png" onclick="tag (document.getElementById ('m'), '\\tan^{-1}','')" alt="" title="">
-		<img src="images/sinh_1.png" onclick="tag (document.getElementById ('m'), '\\sinh^{-1}','')" alt="" title="">
-		<img src="images/cosh_1.png" onclick="tag (document.getElementById ('m'), '\\cosh^{-1}','')" alt="" title="">
-		<img src="images/tanh_1.png" onclick="tag (document.getElementById ('m'), '\\tanh^{-1}','')" alt="" title="">
+	<input type="button" class="hideShowBletters" value="BigLetters">
+	<div class="BlockBletters">
+		<span class="Bletters" onclick="tag (document.getElementById ('m'), '\\Gamma','')" style="background-position: -10px -0px; width: 15px; height: 34px">&nbsp;</span>
+		<span class="Bletters" onclick="tag (document.getElementById ('m'), '\\Delta','')" style="background-position: -55px -2px; width: 17px; height: 35px">&nbsp;</span>
+		<span class="Bletters" onclick="tag (document.getElementById ('m'), '\\Theta','')" style="background-position: -103px -0px; width: 17px; height: 35px">&nbsp;</span>
+		<span class="Bletters" onclick="tag (document.getElementById ('m'), '\\Pi','')" style="background-position: -150px -0px; width: 11px; height: 33px">&nbsp;</span>
+		<span class="Bletters" onclick="tag (document.getElementById ('m'), '\\sum','')" style="background-position: -200px -0px; width: 52px; height: 35px">&nbsp;</span>
+		<span class="Bletters" onclick="tag (document.getElementById ('m'), '\\xi','')" style="background-position: -245px -1px; width: 49px; height: 35px">&nbsp;</span>
+		<span class="Bletters" onclick="tag (document.getElementById ('m'), '\\rho','')" style="background-position: -288px -0px; width: 49px; height: 34px">&nbsp;</span>
+		<span class="Bletters" onclick="tag (document.getElementById ('m'), '\\sigma','')" style="background-position: -335px -0px; width: 48px; height: 35px">&nbsp;</span>
 	</div>
-	<br>
-	<div class="letters" style="display: inline">
-		<img src="images/alpha.png" onclick="tag (document.getElementById ('m'), '\\alpha','')" alt="" title="">
-		<img src="images/ALPHAbig.png" onclick="tag (document.getElementById ('m'), '\\Alpha','')" alt="" title="">
-		<img src="images/beta.png" onclick="tag (document.getElementById ('m'), '\\beta','')" alt="" title="">
-		<img src="images/BETAbig.png" onclick="tag (document.getElementById ('m'), '\\Beta','')" alt="" title="">
-		<img src="images/gamma.png" onclick="tag (document.getElementById ('m'), '\\gamma','')" alt="" title="">
-		<img src="images/GAMMAbig.png" onclick="tag (document.getElementById ('m'), '\\Gamma','')" alt="" title="">
-		<img src="images/pi.png" onclick="tag (document.getElementById ('m'), '\\pi','')" alt="" title="">
-		<img src="images/PIbig.png" onclick="tag (document.getElementById ('m'), '\\Pi','')" alt="" title="">
-		<img src="images/varPhi.png" onclick="tag (document.getElementById ('m'), '\\varphi','')" alt="" title="">
-		<img src="images/Phi.png" onclick="tag (document.getElementById ('m'), '\\Phi','')" alt="" title="">
-		<img src="images/theta.png" onclick="tag (document.getElementById ('m'), '\\theta','')" alt="" title="">
-	</div-->
-	
+	<div class=""></div>
+	<div class=""></div>
+	<div class=""></div>
+		<input type="button" class="hideShow" value="Matrix">
+		<input type="button" class="hideShow" value="Symbols">
+		<input type="button" class="hideShow" value="Functions">
+
+<!--	
 <br><br><span class="block_letters" onclick="tag (document.getElementById ('m'), '\\alpha','')" style="background-position: 2px -0px; width: 15px; height: 34px">&nbsp;</span>
 <span class="block_letters" onclick="tag (document.getElementById ('m'), '\\Alpha','')" style="background-position: -30px -0px; width: 17px; height: 35px">&nbsp;</span>
 <span class="block_letters" onclick="tag (document.getElementById ('m'), '\\beta','')" style="background-position: -488px -0px; width: 17px; height: 35px">&nbsp;</span>
@@ -255,7 +278,7 @@ width:100%;
 <span class="block2_arc" style="background-position: -732px -0px; width: 50px; height: 45px">&nbsp;</span>
 <span class="block2_letters" style="background-position: -800px -0px; width: 15px; height: 34px">&nbsp;</span>
 <span class="block2_letters" style="background-position: -830px -3px; width: 15px; height: 34px">&nbsp;</span>
-	<br> <br>
+-->	<br> <br>
 	
     </form></div>
 	</section>	
