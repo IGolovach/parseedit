@@ -113,10 +113,34 @@ article.accordion section h1
 	-o-transition: all 1s ease;
 	transition: all 1s ease;
 }
-.block1 {
+span.block_letters {
+dispaly: inline;
+padding: 10px 11px;
+width:100%;
       background:url(https://raw.githubusercontent.com/IGolovach/parseedit/master/images/Fsprite.png);
 }
-.block2 {
+span.block_arc {
+dispaly: inline;
+padding: 10px 26px;
+width:100%;
+      background:url(https://raw.githubusercontent.com/IGolovach/parseedit/master/images/Fsprite.png);
+}
+span.block2 {
+dispaly: inline;
+padding: 10px 16px;
+width:100%;
+      background:url(https://raw.githubusercontent.com/IGolovach/parseedit/master/images/Ssprite.png);
+}
+span.block2_arc {
+dispaly: inline;
+padding: 10px 23px;
+width:100%;
+      background:url(https://raw.githubusercontent.com/IGolovach/parseedit/master/images/Ssprite.png);
+}
+span.block2_letters {
+dispaly: inline;
+padding: 10px 11px;
+width:100%;
       background:url(https://raw.githubusercontent.com/IGolovach/parseedit/master/images/Ssprite.png);
 }
 .functions{
@@ -149,7 +173,7 @@ article.accordion section h1
 		<ul id="messages"></ul>
     <form action="">
       <input id="m" autocomplete="off" /><button></button>
-	  	<div class="functions" style="display: inline"> 
+	  	<!--div class="functions" style="display: inline"> 
 		<img src="images/sin.png" onclick="tag (document.getElementById ('m'), '\\sin','')" alt="Жирный CTRL+B" title="Жирный CTRL+B"      >
 		<img src="images/cos.png" onclick="tag (document.getElementById ('m'), '\\cos','')" alt="Курсив CTRL+I" title="Курсив CTRL+I"      >
 		<img src="images/tan.png" onclick="tag (document.getElementById ('m'), '\\tan','')" alt="" title="">
@@ -190,46 +214,48 @@ article.accordion section h1
 		<img src="images/varPhi.png" onclick="tag (document.getElementById ('m'), '\\varphi','')" alt="" title="">
 		<img src="images/Phi.png" onclick="tag (document.getElementById ('m'), '\\Phi','')" alt="" title="">
 		<img src="images/theta.png" onclick="tag (document.getElementById ('m'), '\\theta','')" alt="" title="">
-	</div>
+	</div-->
 	
-	<br><br><div class="block1" style="background-position: -0px -0px; width: 15px; height: 34px">&nbsp;</div>
-<div class="block1" style="background-position: -0px -44px; width: 17px; height: 35px">&nbsp;</div>
-<div class="block1" style="background-position: -0px -89px; width: 52px; height: 35px">&nbsp;</div>
-<div class="block1" style="background-position: -0px -134px; width: 49px; height: 35px">&nbsp;</div>
-<div class="block1" style="background-position: -0px -179px; width: 49px; height: 34px">&nbsp;</div>
-<div class="block1" style="background-position: -0px -223px; width: 48px; height: 35px">&nbsp;</div>
-<div class="block1" style="background-position: -0px -268px; width: 50px; height: 35px">&nbsp;</div>
-<div class="block1" style="background-position: -0px -313px; width: 54px; height: 35px">&nbsp;</div>
-<div class="block1" style="background-position: -0px -358px; width: 17px; height: 35px">&nbsp;</div>
-<br><br><div style="background-position: -0px -403px; width: 11px; height: 33px">&nbsp;</div>
-<div class="block1" style="background-position: -0px -446px; width: 26px; height: 26px">&nbsp;</div>
-<div class="block1" style="background-position: -0px -482px; width: 46px; height: 46px">&nbsp;</div>
-<div class="block1" style="background-position: -0px -538px; width: 39px; height: 26px">&nbsp;</div>
-<div class="block1" style="background-position: -0px -574px; width: 55px; height: 45px">&nbsp;</div>
-<div class="block1" style="background-position: -0px -629px; width: 25px; height: 26px">&nbsp;</div>
-<div class="block1" style="background-position: -0px -665px; width: 36px; height: 26px">&nbsp;</div>
-<div class="block1" style="background-position: -0px -701px; width: 27px; height: 26px">&nbsp;</div>
-<div class="block1" style="background-position: -0px -737px; width: 20px; height: 30px">&nbsp;</div>
-<div class="block1" style="background-position: -0px -777px; width: 20px; height: 30px">&nbsp;</div>
-<<div class="block1" style="background-position: -0px -817px; width: 15px; height: 29px">&nbsp;</div>
+<br><br><span class="block_letters" onclick="tag (document.getElementById ('m'), '\\alpha','')" style="background-position: 2px -0px; width: 15px; height: 34px">&nbsp;</span>
+<span class="block_letters" onclick="tag (document.getElementById ('m'), '\\Alpha','')" style="background-position: -30px -0px; width: 17px; height: 35px">&nbsp;</span>
+<span class="block_letters" onclick="tag (document.getElementById ('m'), '\\beta','')" style="background-position: -488px -0px; width: 17px; height: 35px">&nbsp;</span>
+<span class="block_letters" onclick="tag (document.getElementById ('m'), '\\Beta','')" style="background-position: -522px -0px; width: 11px; height: 33px">&nbsp;</span>
+<span class="block_arc" onclick="tag (document.getElementById ('m'), '\\arccos','')" style="background-position: -72px -0px; width: 52px; height: 35px">&nbsp;</span>
+<span class="block_arc" onclick="tag (document.getElementById ('m'), '\\arccot','')" style="background-position: -144px -0px; width: 49px; height: 35px">&nbsp;</span>
+<span class="block_arc" style="background-position: -213px -0px; width: 49px; height: 34px">&nbsp;</span>
+<span class="block_arc" style="background-position: -282px -0px; width: 48px; height: 35px">&nbsp;</span>
+<span class="block_arc" style="background-position: -350px -0px; width: 50px; height: 35px">&nbsp;</span>
+<span class="block_arc" style="background-position: -420px -0px; width: 54px; height: 35px">&nbsp;</span>
+<span class="block_arc" style="background-position: -550px -0px; width: 26px; height: 26px">&nbsp;</span>
+<span class="block_arc" style="background-position: -602px -0px; width: 46px; height: 46px">&nbsp;</span>
+<span class="block_arc" style="background-position: -670px -0px; width: 39px; height: 26px">&nbsp;</span>
+<span class="block_arc" style="background-position: -733px -0px; width: 55px; height: 45px">&nbsp;</span>
+<span class="block_arc" style="background-position: -798px -0px; width: 25px; height: 26px">&nbsp;</span>
+<span class="block_arc" style="background-position: -846px -0px; width: 36px; height: 26px">&nbsp;</span>
+<span class="block_arc" style="background-position: -898px -0px; width: 27px; height: 26px">&nbsp;</span>
+<span class="block_letters" style="background-position: -948px -0px; width: 20px; height: 30px">&nbsp;</span>
+<span class="block_letters" style="background-position: -992px -0px; width: 20px; height: 30px">&nbsp;</span>
+<span class="block_letters" style="background-position: -1027px -0px; width: 15px; height: 29px">&nbsp;</span>
 	
-	<br><br><div class="block2" style="background-position: -0px -0px; width: 15px; height: 29px">&nbsp;</div>
-<div class="block2" style="background-position: -0px -39px; width: 17px; height: 33px">&nbsp;</div>
-<div class="block2" style="background-position: -0px -82px; width: 14px; height: 35px">&nbsp;</div>
-<div class="block2" style="background-position: -0px -127px; width: 15px; height: 35px">&nbsp;</div>
-<div class="block2" style="background-position: -0px -172px; width: 27px; height: 26px">&nbsp;</div>
-<div class="block2" style="background-position: -0px -208px; width: 34px; height: 26px">&nbsp;</div>
-<div class="block2" style="background-position: -0px -244px; width: 47px; height: 45px">&nbsp;</div>
-<br><br><div class="block2" style="background-position: -0px -299px; width: 36px; height: 25px">&nbsp;</div>
-<div class="block2" style="background-position: -0px -334px; width: 46px; height: 44px">&nbsp;</div>
-<div class="block2" style="background-position: -0px -388px; width: 34px; height: 35px">&nbsp;</div>
-<div class="block2" style="background-position: -0px -433px; width: 30px; height: 26px">&nbsp;</div>
-<div class="block2" style="background-position: -0px -469px; width: 51px; height: 45px">&nbsp;</div>
-<div class="block2" style="background-position: -0px -524px; width: 37px; height: 26px">&nbsp;</div>
-<div class="block2" style="background-position: -0px -560px; width: 50px; height: 45px">&nbsp;</div>
-<div class="block2" style="background-position: -0px -615px; width: 15px; height: 34px">&nbsp;</div>
-<br><br><div class="block2" style="background-position: -0px -659px; width: 15px; height: 34px">&nbsp;</div>
-	<br> 
+<br><br><br><br><span class="block2_letters" style="background-position: -0px -4px; width: 13px; height: 35px">&nbsp;</span>
+<span class="block2_letters" style="background-position: -29px -2px; width: 16px; height: 35px">&nbsp;</span>
+<span class="block2_letters" style="background-position: -66px -0px; width: 15px; height: 29px">&nbsp;</span>
+<span class="block2_letters" style="background-position: -104px -0px; width: 17px; height: 33px">&nbsp;</span>
+<span class="block2_letters" style="background-position: -141px -0px; width: 14px; height: 35px">&nbsp;</span>
+<span class="block2_letters" style="background-position: -175px -0px; width: 15px; height: 35px">&nbsp;</span>
+<span class="block2_arc" style="background-position: -200px -0px; width: 27px; height: 26px">&nbsp;</span>
+<span class="block2_arc" style="background-position: -256px -0px; width: 34px; height: 26px">&nbsp;</span>
+<span class="block2_arc" style="background-position: -310px -0px; width: 47px; height: 45px">&nbsp;</span>
+<span class="block2_arc" style="background-position: -372px -0px; width: 36px; height: 25px">&nbsp;</span>
+<span class="block2_arc" style="background-position: -433px -0px; width: 46px; height: 44px">&nbsp;</span>
+<span class="block2_letters" style="background-position: -504px -0px; width: 34px; height: 35px">&nbsp;</span>
+<span class="block2_arc" style="background-position: -544px -0px; width: 30px; height: 26px">&nbsp;</span>
+<span class="block2_arc" style="background-position: -604px -0px; width: 51px; height: 45px">&nbsp;</span>
+<span class="block2_arc" style="background-position: -669px -0px; width: 37px; height: 26px">&nbsp;</span>
+<span class="block2_arc" style="background-position: -732px -0px; width: 50px; height: 45px">&nbsp;</span>
+<span class="block2_letters" style="background-position: -800px -0px; width: 15px; height: 34px">&nbsp;</span>
+<span class="block2_letters" style="background-position: -830px -3px; width: 15px; height: 34px">&nbsp;</span>
+	<br> <br>
 	
     </form></div>
 	</section>	
