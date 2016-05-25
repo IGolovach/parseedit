@@ -14,7 +14,10 @@ $(document).ready(function(){
 	$(".hideShowBletters").click(function(){
         $(".BlockBletters").toggle();
     });
-	$(".letters, .Bletters").on("click", function() {
+	$(".hideShowSymbols").click(function(){
+        $(".BlockSymbols").toggle();
+    });
+	$(".letters, .Bletters, .symbols, .symbolsSecondGroup").on("click", function() {
       var inputArea = $("#m"),
       val = inputArea.val();
       if (val.charAt(val.length-1) != " ") {
@@ -131,26 +134,23 @@ article.accordion section h1
 	-o-transition: all 1s ease;
 	transition: all 1s ease;
 }
-.Blockletters{
+.Blockletters, .BlockBletters, .BlockSymbols{
 	margin:2%;
 	display:none;
 }
-.BlockBletters{
-	margin:2%;
-	display:none;
-}
-.hideShowLetters, .hideShowBletters{
+.hideShowLetters, .hideShowBletters, .hideShowSymbols{
 	dispay:inline;
 	cursor:pointer;
 	border: solid 2px blue;
 }
-.hideShowLetters:hover, .hideShowBletters:hover{
+.hideShowLetters:hover, .hideShowBletters:hover, .hideShowSymbols:hover{
 	background: rgb(255, 200, 200); 
 }
 span.letters {
 	dispaly: inline;
 	padding: 10px 11px;
 	width:100%;
+	cursor:pointer;
     background:url(https://raw.githubusercontent.com/IGolovach/parseedit/master/images/letters.png);
 }
 
@@ -158,7 +158,22 @@ span.Bletters {
 	dispaly: inline;
 	padding: 10px 11px;
 	width:100%;
+	cursor:pointer;
     background:url(https://raw.githubusercontent.com/IGolovach/parseedit/master/images/Bletters.png);
+}
+span.symbols {
+	dispaly: inline;
+	padding: 10px 11px;
+	width:100%;
+	cursor:pointer;
+    background:url(https://raw.githubusercontent.com/IGolovach/parseedit/master/images/symbols.png);
+}
+span.symbolsSecondGroup {
+	dispaly: inline;
+	padding: 10px 11px;
+	width:100%;
+	cursor:pointer;
+    background:url(https://raw.githubusercontent.com/IGolovach/parseedit/master/images/symbols2.png);
 }
 span.block2 {
 dispaly: inline;
@@ -239,11 +254,38 @@ width:100%;
 		<span class="Bletters" onclick="tag (document.getElementById ('m'), '\\rho','')" style="background-position: -288px -0px; width: 49px; height: 34px">&nbsp;</span>
 		<span class="Bletters" onclick="tag (document.getElementById ('m'), '\\sigma','')" style="background-position: -335px -0px; width: 48px; height: 35px">&nbsp;</span>
 	</div>
-	<div class=""></div>
+	<input type="button" class="hideShowSymbols" value="Symbols">
+	<div class="BlockSymbols">
+		<span class="symbols" onclick="tag (document.getElementById ('m'), '\\equiv','')" style="background-position: -10px -0px; width: 15px; height: 34px">&nbsp;</span>
+		<span class="symbols" onclick="tag (document.getElementById ('m'), '\\leqslant','')" style="background-position: -55px -2px; width: 17px; height: 35px">&nbsp;</span>
+		<span class="symbols" onclick="tag (document.getElementById ('m'), '\\geqslant','')" style="background-position: -103px -0px; width: 17px; height: 35px">&nbsp;</span>
+		<span class="symbols" onclick="tag (document.getElementById ('m'), '\\neq','')" style="background-position: -150px -0px; width: 11px; height: 33px">&nbsp;</span>
+		<span class="symbols" onclick="tag (document.getElementById ('m'), '\\not\\equiv','')" style="background-position: -198px -0px; width: 52px; height: 35px">&nbsp;</span>
+		<span class="symbols" onclick="tag (document.getElementById ('m'), '\\sim','')" style="background-position: -249px -1px; width: 49px; height: 35px">&nbsp;</span>
+		<span class="symbols" onclick="tag (document.getElementById ('m'), '\\approx','')" style="background-position: -295px -0px; width: 49px; height: 34px">&nbsp;</span>
+		<br><br><br>   
+		<span class="symbolsSecondGroup" onclick="tag (document.getElementById ('m'), '\\varnothing','')" style="background-position: -8px -0px; width: 15px; height: 34px">&nbsp;</span>
+		<span class="symbolsSecondGroup" onclick="tag (document.getElementById ('m'), '\\subset','')" style="background-position: -48px -0px; width: 17px; height: 35px">&nbsp;</span>
+		<span class="symbolsSecondGroup" onclick="tag (document.getElementById ('m'), '\\supset','')" style="background-position: -93px -0px; width: 17px; height: 35px">&nbsp;</span>
+		<span class="symbolsSecondGroup" onclick="tag (document.getElementById ('m'), '\\in','')" style="background-position: -142px -3px; width: 11px; height: 33px">&nbsp;</span>
+		<span class="symbolsSecondGroup" onclick="tag (document.getElementById ('m'), '\\notin','')" style="background-position: -186px -3px; width: 52px; height: 35px">&nbsp;</span>
+		<span class="symbolsSecondGroup" onclick="tag (document.getElementById ('m'), '\{}\' ','')" style="background-position: -230px -1px; width: 49px; height: 35px">&nbsp;</span>
+		<span class="symbolsSecondGroup" onclick="tag (document.getElementById ('m'), '\\bar{}','')" style="background-position: -275px -0px; width: 49px; height: 34px">&nbsp;</span>
+		
+		<span class="symbolsSecondGroup" onclick="tag (document.getElementById ('m'), '\\rightarrow','')" style="background-position: -320px -0px; width: 15px; height: 34px">&nbsp;</span>
+		<span class="symbolsSecondGroup" onclick="tag (document.getElementById ('m'), '\\leftarrow','')" style="background-position: -365px -0px; width: 17px; height: 35px">&nbsp;</span>
+		<span class="symbolsSecondGroup" onclick="tag (document.getElementById ('m'), '\\overset{}{\\rightarrow}','')" style="background-position: -410px -0px; width: 17px; height: 35px">&nbsp;</span>
+		<span class="symbolsSecondGroup" onclick="tag (document.getElementById ('m'), '\\overset{}{\\leftarrow}','')" style="background-position: -452px -0px; width: 11px; height: 33px">&nbsp;</span>
+		<span class="symbolsSecondGroup" onclick="tag (document.getElementById ('m'), 'x \\cdot y','')" style="background-position: -513px -3px; width: 49px; height: 35px">&nbsp;</span>
+		<span class="symbolsSecondGroup" onclick="tag (document.getElementById ('m'), 'x \\div y','')" style="background-position: -587px -1px; width: 49px; height: 35px">&nbsp;</span>
+		<span class="symbolsSecondGroup" onclick="tag (document.getElementById ('m'), '\\pm ','')" style="background-position: -651px -0px; width: 49px; height: 35px">&nbsp;</span>
+		<span class="symbolsSecondGroup" onclick="tag (document.getElementById ('m'), '\\times','')" style="background-position: -722px -3px; width: 49px; height: 35px">&nbsp;</span>
+		<span class="symbolsSecondGroup" onclick="tag (document.getElementById ('m'), '\\cup','')" style="background-position: -790px -1px; width: 49px; height: 35px">&nbsp;</span>
+		<span class="symbolsSecondGroup" onclick="tag (document.getElementById ('m'), '\\cap','')" style="background-position: -840px -0px; width: 49px; height: 35px">&nbsp;</span>
+	</div>  
 	<div class=""></div>
 	<div class=""></div>
 		<input type="button" class="hideShow" value="Matrix">
-		<input type="button" class="hideShow" value="Symbols">
 		<input type="button" class="hideShow" value="Functions">
 
 <!--	
