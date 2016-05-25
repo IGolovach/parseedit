@@ -10,9 +10,17 @@
 $(document).ready(function(){
     $(".hideShowLetters").click(function(){
         $(".Blockletters").toggle();
-    });
+	});
 	$(".hideShowBletters").click(function(){
         $(".BlockBletters").toggle();
+    });
+	$(".letters, .Bletters").on("click", function() {
+      var inputArea = $("#m"),
+      val = inputArea.val();
+      if (val.charAt(val.length-1) != " ") {
+          val += " ";
+      }
+      inputArea.focus().val("").val(val);
     });
 });
 </script>
@@ -198,8 +206,8 @@ width:100%;
 		<h1><a href="#acc2">MathChat: Chat</a></h1>
 		<div id="math_block">
 		<ul id="messages"></ul>
-    <form action="">
-		<input id="m" autocomplete="off" /><button></button>
+    <form id="send" action="">
+		<input id="m" autocomplete="off" autofocus/><button></button>
 		<input type="button" class="hideShowLetters" value="SmallLetters">
 	<div class="Blockletters">
 		<span class="letters" onclick="tag (document.getElementById ('m'), '\\delta','')" style="background-position: -0px -0px; width: 15px; height: 34px">&nbsp;</span>
