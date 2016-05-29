@@ -88,9 +88,9 @@ function myFunc(y)
    <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body { font: 13px Helvetica, Arial; }
-      form { background: #29088A; padding: 3px;  bottom: 0; width: 100%; border-radius: 5px;}
+      form { background: #29088A; padding: 3px;  bottom: 0; width: 100%; border-radius: 5px; margin: 0  0 5% 0;}
       form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
-      form button { border: 0; width: 4%; background:url(https://raw.githubusercontent.com/IGolovach/parseedit/master/images/icon_send.png) 10% 10%; border-radius: 5px; padding: 20px; }
+      form button { border: 0; width: 5%; background:url(https://raw.githubusercontent.com/IGolovach/parseedit/master/images/icon_send.png) 10% 10%; border-radius: 5px; padding: 27px; }
       #messages { list-style-type: none; margin: 0; padding: 0; }
       #messages li { padding: 5px 10px; }
       #messages li:nth-child(odd) { background: #eee; }
@@ -98,9 +98,10 @@ article.accordion
 {
 	display: block;
 	width: 100%;
+	height: 100%;
 	padding: 0.5em 0.5em 1px 0.5em;
 	margin: 0 auto;
-	background-color: #58ACFA;
+	background-color: #CEE3F6;
 	border-radius: 5px;
 	box-shadow: 0 3px 3px rgba(0,0,0,0.3);
 }
@@ -109,26 +110,27 @@ article.accordion section
 {
 	display: block;
 	width: 90%;
-	height: 2em;
+	height: 100%;
+	height: 2.3em;
 	padding: 0 1em;
 	margin: 0 0 0.5em 0;
 	color: #333;
-	background-color: #045FB4;
+	background-color: #01A9DB;
 	overflow: hidden;
 	border-radius: 3px;
 }
 
-article.accordion section div#math_block{height: 80%;overflow: auto;}
+article.accordion section div#math_block{height: 80%; width:100%; overflow:auto;}
 
 article.accordion section h1
 {
-	font-size: 1em;
+	font-size: 1.3em;
 	font-weight: bold;
 	width: 100%;
 	line-height: 2em;
 	padding: 0;
 	margin: 0;
-	color: #ddd;
+	color: #CEE3F6;
 }
 
 article.accordion section h1 a
@@ -142,14 +144,14 @@ article.accordion section h1 a
 }
 article.accordion section:target
 {
-	height: 30em;
+	height: 100%;
 	background-color: #fff;
 }
 
 article.accordion section:target h1
 {
 	font-size: 1.6em;
-	color: #333;
+	color: #29088A;
 }
 article.accordion section,
 article.accordion section h1
@@ -166,21 +168,49 @@ input#m{border-radius:20px;}
 	margin:2%;
 	display:none;
 }
+.button {
+    margin: 10px;
+    text-decoration: none;
+    font: bold 1em 'Trebuchet MS',Arial, Helvetica; /*Change the em value to scale the button*/
+    display: inline-block;
+    text-align: center;
+    color: #fff;    
+    border: 1px solid #9c9c9c; /* Fallback style */
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 2px rgba(0,0,0,0.4);    
+    box-shadow: 0 0 .05em rgba(0,0,0,0.4);   
+}
 .hideShowLetters, .hideShowBletters, 
 .hideShowSymbols, .hideShowFunctions, 
 .hideShowMatrix{
+            background: #6F50E7;
+            background: -webkit-gradient(linear, left top, left bottom, from(#B8A9F3), to(#6F50E7));
+            background: -moz-linear-gradient(-90deg, #B8A9F3, #6F50E7);
+            filter: progid: DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#B8A9F3', EndColorStr='#6F50E7');
+color: #fff;
 	dispay:inline;
 	cursor:pointer;
 	width:15%;
 	margin:1%;
-	border: solid 2px blue;
+	border-radius:10px;
 }
 .hideShowLetters:hover, .hideShowBletters:hover, 
 .hideShowSymbols:hover, .hideShowFunctions:hover, 
 .hideShowMatrix:hover{
-	background: rgb(255, 255, 230); 
+color: #fff;
+            background: #B8A9F3;
+            background: -webkit-gradient(linear, left top, left bottom, from(#6F50E7), to(#B8A9F3));
+            background: -moz-linear-gradient(-90deg, #6F50E7, #B8A9F3);
+            filter: progid: DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#6F50E7', EndColorStr='#B8A9F3'); 
 }
+.hideShowLetters:active, .hideShowBletters:active, 
+.hideShowSymbols:active, .hideShowFunctions:active, 
+.hideShowMatrix:active {
+            background: #6F50E7;
+			color: #fff;
+        }
 span.letters {
+	border-radius: 4px;
 	dispaly: inline;
 	padding: 10px 11px;
 	width:100%;
@@ -189,6 +219,7 @@ span.letters {
 }
 
 span.Bletters {
+	border-radius: 4px;
 	dispaly: inline;
 	padding: 10px 11px;
 	width:100%;
@@ -196,6 +227,7 @@ span.Bletters {
     background:url(https://raw.githubusercontent.com/IGolovach/parseedit/master/images/Bletters.png);
 }
 span.symbols {
+	border-radius: 4px;
 	dispaly: inline;
 	padding: 10px 11px;
 	width:100%;
@@ -203,6 +235,7 @@ span.symbols {
     background:url(https://raw.githubusercontent.com/IGolovach/parseedit/master/images/symbols.png);
 }
 span.symbolsSecondGroup {
+	border-radius: 4px;
 	dispaly: inline;
 	padding: 10px 11px;
 	width:100%;
@@ -210,6 +243,7 @@ span.symbolsSecondGroup {
     background:url(https://raw.githubusercontent.com/IGolovach/parseedit/master/images/symbols2.png);
 }
 span.functions{
+	border-radius: 4px;
 	dispaly: inline;
 	padding: 10px 24px;
 	width:100%;
@@ -217,6 +251,7 @@ span.functions{
     background:url(https://raw.githubusercontent.com/IGolovach/parseedit/master/images/func.png);
 }
 span.functions2{
+	border-radius: 4px;
 	dispaly: inline;
 	padding: 10px 24px;
 	width:100%;
@@ -224,6 +259,7 @@ span.functions2{
     background:url(https://raw.githubusercontent.com/IGolovach/parseedit/master/images/func2.png);
 }
 span.matrix{
+	border-radius: 4px;
 	dispaly: inline;
 	padding: 10px 24px;
 	width:100%;
@@ -245,7 +281,7 @@ span.matrix{
 			<ul id="messages"></ul>
 			<form id="send" action="">
 				<input id="m" autocomplete="off" autofocus/><button></button>
-				<input type="button" class="hideShowLetters" value="SmallLetters">
+				<input type="button" class="hideShowLetters button" value="SmallLetters">
 				<div class="Blockletters">
 					<span class="letters" onclick="tag (document.getElementById ('m'), '\\delta','')" style="background-position: -0px -0px; width: 15px; height: 34px">&nbsp;</span>
 					<span class="letters" onclick="tag (document.getElementById ('m'), '\\varepsilon','')" style="background-position: -34px -2px; width: 17px; height: 35px">&nbsp;</span>
@@ -265,7 +301,7 @@ span.matrix{
 					<span class="letters" onclick="tag (document.getElementById ('m'), '\\varphi','')" style="background-position: -577px -0px; width: 48px; height: 35px">&nbsp;</span>
 					<span class="letters" onclick="tag (document.getElementById ('m'), '\\psi','')" style="background-position: -619px -0px; width: 48px; height: 35px">&nbsp;</span>
 				</div>
-				<input type="button" class="hideShowBletters" value="BigLetters">
+				<input type="button" class="hideShowBletters button" value="BigLetters">
 				<div class="BlockBletters">
 					<span class="Bletters" onclick="tag (document.getElementById ('m'), '\\Gamma','')" style="background-position: -10px -0px; width: 15px; height: 34px">&nbsp;</span>
 					<span class="Bletters" onclick="tag (document.getElementById ('m'), '\\Delta','')" style="background-position: -55px -2px; width: 17px; height: 35px">&nbsp;</span>
@@ -276,7 +312,7 @@ span.matrix{
 					<span class="Bletters" onclick="tag (document.getElementById ('m'), '\\rho','')" style="background-position: -288px -0px; width: 49px; height: 34px">&nbsp;</span>
 					<span class="Bletters" onclick="tag (document.getElementById ('m'), '\\sigma','')" style="background-position: -335px -0px; width: 48px; height: 35px">&nbsp;</span>
 				</div>
-				<input type="button" class="hideShowSymbols" value="Symbols">
+				<input type="button" class="hideShowSymbols button" value="Symbols">
 				<div class="BlockSymbols">
 					<span class="symbols" onclick="tag (document.getElementById ('m'), '\\equiv','')" style="background-position: -10px -0px; width: 15px; height: 34px">&nbsp;</span>
 					<span class="symbols" onclick="tag (document.getElementById ('m'), '\\leqslant','')" style="background-position: -55px -2px; width: 17px; height: 35px">&nbsp;</span>
@@ -305,7 +341,7 @@ span.matrix{
 					<span class="symbolsSecondGroup" onclick="tag (document.getElementById ('m'), '\\cup','')" style="background-position: -786px -1px; width: 49px; height: 35px">&nbsp;</span>
 					<span class="symbolsSecondGroup" onclick="tag (document.getElementById ('m'), '\\cap','')" style="background-position: -836px -0px; width: 49px; height: 35px">&nbsp;</span>
 				</div>  
-				<input type="button" class="hideShowFunctions" value="Functions">
+				<input type="button" class="hideShowFunctions button" value="Functions">
 				<div class="BlockFunctions">
 					<span class="functions" onclick="tag (document.getElementById ('m'), '\\sin','')" style="background-position: -8px -0px; width: 15px; height: 34px">&nbsp;</span>
 					<span class="functions" onclick="tag (document.getElementById ('m'), '\\cos','')" style="background-position: -62px -0px; width: 17px; height: 35px">&nbsp;</span>
@@ -327,7 +363,7 @@ span.matrix{
 					<span class="functions2" onclick="tag (document.getElementById ('m'), '\\min','')" style="background-position: -482px -0px; width: 49px; height: 34px">&nbsp;</span>
 					<span class="functions2" onclick="tag (document.getElementById ('m'), '\\infty','')" style="background-position: -525px -0px; width: 49px; height: 34px">&nbsp;</span>				
 				</div>
-				<input type="button" class="hideShowMatrix" value="Matrix">  
+				<input type="button" class="hideShowMatrix button" value="Matrix">  
 				<div class="BlockMatrix"></div>				
 			</form>
 		</div>
@@ -353,7 +389,7 @@ span.matrix{
  var div = document.createElement('div') ;
  div.innerHTML = msg2;
 		$('#messages').append(div);
-      katex.render(msg,one);
+      try{katex.render(msg,one);} catch(e){msg='Формула не верно набрана';}
       document.getElementById('one').id=my;
       }});
 </script>
