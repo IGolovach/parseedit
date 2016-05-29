@@ -43,7 +43,7 @@ $(document).ready(function(){
 		$(".BlockSymbols").hide();
 		$(".BlockFunctions").hide();
     });
-	$(".letters, .Bletters, .symbols, .symbolsSecondGroup, .functions, .matrix").on("click", function() {
+	$(".letters, .Bletters, .symbols, .symbolsSecondGroup, .functions, .functions2, .matrix").on("click", function() {
       var inputArea = $("#m"),
       val = inputArea.val();
       if (val.charAt(val.length-1) != " ") {
@@ -160,6 +160,8 @@ article.accordion section h1
 	-o-transition: all 1s ease;
 	transition: all 1s ease;
 }
+input#m{border-radius:20px;}
+button{background:url(https://raw.githubusercontent.com/IGolovach/parseedit/master/images/icon-send.png);}
 .Blockletters, .BlockBletters, 
 .BlockSymbols, .BlockFunctions, .BlockMatrix{
 	margin:2%;
@@ -214,6 +216,20 @@ span.functions{
 	width:100%;
 	cursor:pointer;
     background:url(https://raw.githubusercontent.com/IGolovach/parseedit/master/images/func.png);
+}
+span.functions2{
+	dispaly: inline;
+	padding: 10px 24px;
+	width:100%;
+	cursor:pointer;
+    background:url(https://raw.githubusercontent.com/IGolovach/parseedit/master/images/func2.png);
+}
+span.matrix{
+	dispaly: inline;
+	padding: 10px 24px;
+	width:100%;
+	cursor:pointer;
+    background:url(https://raw.githubusercontent.com/IGolovach/parseedit/master/images/matrix.png);
 }
 .letters{
 	width: 8; 
@@ -309,10 +325,19 @@ span.functions{
 					<span class="functions" onclick="tag (document.getElementById ('m'), '\\arccos','')" style="background-position: -315px -1px; width: 49px; height: 35px">&nbsp;</span>
 					<span class="functions" onclick="tag (document.getElementById ('m'), '\\arctan','')" style="background-position: -393px -0px; width: 49px; height: 34px">&nbsp;</span>
 					<span class="functions" onclick="tag (document.getElementById ('m'), '\\textrm{arccot}','')" style="background-position: -470px -0px; width: 49px; height: 34px">&nbsp;</span>
-				<br><br><br>   
-				
+				<br><br><br> 
+					<span class="functions2" onclick="tag (document.getElementById ('m'), '\\exp','')" style="background-position: -22px -0px; width: 15px; height: 34px">&nbsp;</span>
+					<span class="functions2" onclick="tag (document.getElementById ('m'), '\\lg','')" style="background-position: -72px -0px; width: 17px; height: 35px">&nbsp;</span>
+					<span class="functions2" onclick="tag (document.getElementById ('m'), '\\ln','')" style="background-position: -119px -0px; width: 17px; height: 35px">&nbsp;</span>
+					<span class="functions2" onclick="tag (document.getElementById ('m'), '\\log','')" style="background-position: -170px -0px; width: 11px; height: 33px">&nbsp;</span>
+					<span class="functions2" onclick="tag (document.getElementById ('m'), '\\log_{e}','')" style="background-position: -226px -0px; width: 52px; height: 35px">&nbsp;</span>
+					<span class="functions2" onclick="tag (document.getElementById ('m'), '\\log_{10}','')" style="background-position: -285px -1px; width: 49px; height: 35px">&nbsp;</span>
+					<span class="functions2" onclick="tag (document.getElementById ('m'), '\\lim','')" style="background-position: -349px -0px; width: 49px; height: 34px">&nbsp;</span>
+					<span class="functions2" onclick="tag (document.getElementById ('m'), '\\max','')" style="background-position: -417px -0px; width: 49px; height: 34px">&nbsp;</span>				
+					<span class="functions2" onclick="tag (document.getElementById ('m'), '\\min','')" style="background-position: -482px -0px; width: 49px; height: 34px">&nbsp;</span>
+					<span class="functions2" onclick="tag (document.getElementById ('m'), '\\infty','')" style="background-position: -525px -0px; width: 49px; height: 34px">&nbsp;</span>				
 				</div>
-				<input type="button" class="hideShowMatrix" value="Matrix">
+				<input type="button" class="hideShowMatrix" value="Matrix">  
 				<div class="BlockMatrix"></div>				
 			</form>
 		</div>
