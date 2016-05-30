@@ -13,31 +13,31 @@ $(document).ready(function(){
 		$(".BlockBletters").hide();
 		$(".BlockSymbols").hide();
 		$(".BlockFunctions").hide();
-		$(".BlockMatrix").hide();
+		$(".BlockColors").hide();
 	});
 	$(".hideShowBletters").click(function(){
         $(".BlockBletters").toggle();
 		$(".Blockletters").hide();
 		$(".BlockSymbols").hide();
 		$(".BlockFunctions").hide();
-		$(".BlockMatrix").hide();
+		$(".BlockColors").hide();
     });
 	$(".hideShowSymbols").click(function(){
         $(".BlockSymbols").toggle();
 		$(".Blockletters").hide();
 		$(".BlockBletters").hide();
 		$(".BlockFunctions").hide();
-		$(".BlockMatrix").hide();
+		$(".BlockColors").hide();
     });
 	$(".hideShowFunctions").click(function(){
         $(".BlockFunctions").toggle();
 		$(".Blockletters").hide();
 		$(".BlockBletters").hide();
 		$(".BlockSymbols").hide();
-		$(".BlockMatrix").hide();
+		$(".BlockColors").hide();
     });
-	$(".hideShowMatrix").click(function(){
-        $(".BlockMatrix").toggle();
+	$(".hideShowColors").click(function(){
+        $(".BlockColors").toggle();
 		$(".Blockletters").hide();
 		$(".BlockBletters").hide();
 		$(".BlockSymbols").hide();
@@ -182,7 +182,7 @@ input#m{border-radius:20px;}
 }
 .hideShowLetters, .hideShowBletters, 
 .hideShowSymbols, .hideShowFunctions, 
-.hideShowMatrix{
+.hideShowColors{
             background: #6F50E7;
             background: -webkit-gradient(linear, left top, left bottom, from(#B8A9F3), to(#6F50E7));
             background: -moz-linear-gradient(-90deg, #B8A9F3, #6F50E7);
@@ -196,7 +196,7 @@ color: #fff;
 }
 .hideShowLetters:hover, .hideShowBletters:hover, 
 .hideShowSymbols:hover, .hideShowFunctions:hover, 
-.hideShowMatrix:hover{
+.hideShowColors:hover{
 color: #fff;
             background: #B8A9F3;
             background: -webkit-gradient(linear, left top, left bottom, from(#6F50E7), to(#B8A9F3));
@@ -205,7 +205,7 @@ color: #fff;
 }
 .hideShowLetters:active, .hideShowBletters:active, 
 .hideShowSymbols:active, .hideShowFunctions:active, 
-.hideShowMatrix:active {
+.hideShowColors:active {
             background: #6F50E7;
 			color: #fff;
         }
@@ -258,7 +258,7 @@ span.functions2{
 	cursor:pointer;
     background:url(https://raw.githubusercontent.com/IGolovach/parseedit/master/images/func2.png);
 }
-span.matrix{
+span.colors{
 	border-radius: 4px;
 	dispaly: inline;
 	padding: 10px 24px;
@@ -272,8 +272,10 @@ span.matrix{
   <article class="accordion">
 	<section id="acc1">
 		<h1><a href="#acc1">MathChat: About</a></h1>
-		<p>Разработанный чат предназначен для обмена текстовыми сообщениями, а также сообщениями, которые содержат математические формулы. С помощью разработанного приложения можно проводить
-обучение через интернет, отображение формул на проекторе в реальном времени, проводить контроль знаний студентов. </p>
+		<p>Вас вітає веб-додаток «Математичний чат» на платформі Node.js. Система має адаптивний дизайн, тобто відбувається масштабування проекту з одною базою коду. Інформація, яка набирається користувачем, приймається на сервер у вигляді текстової та формульної інформації, створеної за допомогою системи TeX. 
+В ході виконання курсової роботи було розроблено математичний чат для обміну математичними повідомленнями, текстовими даними та фрагментами коду. Сайт розроблено з використанням мови програмування JavaScript, платформи Node.js, що дає змогу обмінюватися повідомленнями без перевантаження сторінки браузера та без очікування закінчення вводу інформації від іншого користувача, пакетного менеджера npm, пакетного модуля Socket.io, що входить до складу npm, для обміну повідомленнями в реальному часі
+та бібліотеки Katex.js для відображення введеної формульної інформації у графічному вигляді. Приємного користування!
+</p>
 	</section>	
 	<section id="acc2">
 		<h1><a href="#acc2">MathChat: Chat</a></h1>
@@ -363,8 +365,8 @@ span.matrix{
 					<span class="functions2" onclick="tag (document.getElementById ('m'), '\\min','')" style="background-position: -482px -0px; width: 49px; height: 34px">&nbsp;</span>
 					<span class="functions2" onclick="tag (document.getElementById ('m'), '\\infty','')" style="background-position: -525px -0px; width: 49px; height: 34px">&nbsp;</span>				
 				</div>
-				<input type="button" class="hideShowMatrix button" value="Matrix">  
-				<div class="BlockMatrix"></div>				
+				<input type="button" class="hideShowColors button" value="Colors">  
+				<div class="BlockColors"></div>				
 			</form>
 		</div>
 	</section>	
@@ -389,7 +391,8 @@ span.matrix{
  var div = document.createElement('div') ;
  div.innerHTML = msg2;
 		$('#messages').append(div);
-      try{katex.render(msg,one);} catch(e){msg='Формула не верно набрана';}
+      try{katex.render(msg,one);} catch(e){msg='Incorrect code'; msg2='<span id="one" style="color:red;">'+msg+'</span><br><br><br>'; div.innerHTML = msg2;
+		$('#messages').append(div);}
       document.getElementById('one').id=my;
       }});
 </script>
